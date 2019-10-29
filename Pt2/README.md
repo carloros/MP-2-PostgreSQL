@@ -44,6 +44,20 @@ CREATE USER albums WITH PASSWORD '123';
 
 - Crea la taula principal amb la que poder gestionar la teva col·lecció d’àlbums musicals (ID de tipus serial, titol de tipus varchar, autor de tipus varchar, suport de tipus varchar, data_edicio de tipus date, discogràfica de tipus varchar). Poseu el ID com a clau primària.
 
+
+
+Primer que rés entrarem a la BD correcta amb l'usuari desitjat, no ho he pogut fer amb albums per problemes de seguretat
+
+```bash
+#psql -d databse -U user -W
+psql -d albums -U postgres -W
+```
+
+![](img/3.png)
+
+
+Aqui ja podem veure com creem i llistem la taula
+
 ```plsql
 CREATE TABLE album (
     id        		serial CONSTRAINT firstkey PRIMARY KEY,
@@ -55,14 +69,51 @@ CREATE TABLE album (
 );
 ```
 
+![](img/4.png)
+
 
 
 ## 4 - Crear taules complementàries
 
 - Crea les següents taules complementàries (cadascuna en la seua clau primària):
   - autor
+  
+  ```plsql
+  CREATE TABLE autor (
+      id        		serial CONSTRAINT firstkeyautor PRIMARY KEY,
+      nom       		varchar(40) NOT NULL,
+      cognom			varchar(100)
+  );
+  ```
+  
+  ![](img/5.png)
+  
+  
+  
   - discogràfica
+  
+  ```plsql
+  CREATE TABLE discografica (
+      id        		serial CONSTRAINT firstkeydiscografica PRIMARY KEY,
+      nom       		varchar(40) NOT NULL,
+      carrer			varchar(200)
+  );
+  ```
+  
+  ![](img/6.png)
+  
+  
+  
   - suport
+  
+  ```plsql
+  CREATE TABLE suport (
+      id        		serial CONSTRAINT firstkeysuport PRIMARY KEY,
+      nom       		varchar(40) NOT NULL
+  );
+  ```
+  
+  ![](img/7.png)
 
 
 
