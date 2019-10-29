@@ -20,7 +20,7 @@ ALTER USER albums WITH SUPERUSER;
 
 
 
-```
+```plsql
 CREATE DATABASE albums;
 ```
 
@@ -46,17 +46,18 @@ CREATE USER albums WITH PASSWORD '123';
 
 
 
-Primer que rés entrarem a la BD correcta amb l'usuari desitjat, no ho he pogut fer amb albums per problemes de seguretat
+> Primer que rés entrarem a la BD correcta amb l'usuari desitjat, **no ho he pogut fer amb l'usuari albums per problemes de seguretat amb el mètode d'autenticació**
 
 ```bash
 #psql -d databse -U user -W
-psql -d albums -U postgres -W
+psql -d albums -U albums -W
 ```
 
 ![](img/3.png)
 
-
-Aqui ja podem veure com creem i llistem la taula
+>
+> Aqui ja podem veure com creem i llistem la taula
+>
 
 ```plsql
 CREATE TABLE album (
@@ -121,13 +122,62 @@ CREATE TABLE album (
 
 - Crea les claus foranes necessàries a la taula principal.
 
+```plsql
+ALTER TABLE album
+	ADD id_autor serial CONSTRAINT fk_autor REFERENCES autor (id),
+	ADD id_discografica serial CONSTRAINT fk_discografica REFERENCES discografica (id),
+	ADD id_suport serial CONSTRAINT fk_suport REFERENCES suport (id);
+```
 
+![](img/8.png)
 
 ## 6 - Introdueix dades
 
 - Introdueix dades a totes les taules (un parell de registres és suficient).
 
+  - Suport
 
+  ```plsql
+  INSERT INTO suport (nom)
+  	VALUES ('Basic');
+  
+  INSERT INTO suport (nom)
+  	VALUES ('Premium');
+  ```
+
+  ![](img/9.png)
+
+  
+
+  - Discogràfica
+
+  ```plsql
+  INSERT INTO discografica (nom, carrer)
+  VALUES ('4KPower', 'Num 1 c/Algo'), ('Amazingnotes', 'Num 34 c/Algo2');
+  ```
+
+  ![](img/10.png)
+
+  
+
+  - Autor
+
+  ```plsql
+  INSERT INTO autor (nom, cognom)
+  VALUES ('Skillet', 'Hard Rock'), ('Slipknot', 'Nu Metal');
+  ```
+
+  ![](img/11.png)
+
+  
+
+  - Album
+
+  ```
+  
+  ```
+
+  
 
 ## 7 - Realitzar alguna consulta
 
