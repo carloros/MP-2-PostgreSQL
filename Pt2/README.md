@@ -182,7 +182,6 @@ ALTER TABLE album
 ![](img/12.png)
 
 
-
 ## 7 - Realitzar alguna consulta
 
 - Des de l’eina pgAdmin III realitza alguna consulta dels tipos següents:
