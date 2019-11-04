@@ -173,11 +173,15 @@ ALTER TABLE album
 
   - Album
 
-  ```
+  ```plsql
+  INSERT INTO album (titol, autor, suport, data_edicio, discogràfica, id_autor, id_discografica, id_suport)
+  VALUES ('Comatose', 'Skillet', 'Basic', '2017-03-14', '4KPower', 1, 1, 1), ('Awake', 'Slipknot', 'Premium', '2017-04-30', 'Amazingnotes', 2, 2, 2);
+```
   
-  ```
 
-  
+![](img/12.png)
+
+
 
 ## 7 - Realitzar alguna consulta
 
