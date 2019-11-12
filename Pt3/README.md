@@ -1,1 +1,55 @@
- 
+#  M2 UF4 Pt2.1 PostgreSQL Objectes
+
+[TOC]
+
+## 0. Preparació entorn
+
+- Crea la base de dades DESCOMPON_PCS a partir de l'script arxiu.psql seguint les instruccions indicades al peu del mateix.
+
+  
+
+  > ​	El primer pas serà la creació de la BD amb el nom desitjat:
+
+```plsql
+CREATE DATABASE DESCOMPON_PCS;
+```
+
+![](img/1.png)
+
+
+
+> Seguidament imporarem l'arxiu sql per emplenar la BD amb totes les comandes desitjades:
+
+```plsql
+psql -d DESCOMPON_PCS -a -f arxiu.psql
+```
+
+
+
+## 1. Crear un camp compost
+
+- Crea un tipo de dades compost  que inclogue més d'un camp (`CREATE TYPE ... AS ...`) que pugue servir per una columna d'una nova taula que hauràs de crear a la BD (no es pot usar el tipo de l'exemple dels apunts). 
+
+
+
+## 2. Crear taula amb camp compost
+
+- Crea una nova taula que inclogue algun camp del tipo de dades compost anterior.
+
+
+
+## 3. Inserts a una taula amb camp compost
+
+- Mostra exemples d'inserció de dades a la taula (INSERT INTO...), actualització i consulta de les mateixes (SELECT...), accedint en tots els casos al camp del tipo de dades compost.
+
+
+
+## 4. Restriccions als camps
+
+- Afegiu a alguna taula ja creada, o creeu-ne alguna de nova, que tingue diferents tipos de restriccions (`PRIMARY KEY, UNIQUE, FOREIGN KEY/REFERENCES, NULL, CHECK, ...`) als atributs. Demostreu la utilitat de les restriccions insertant dades a les taules.
+
+
+
+## 5. Restriccions a les taules
+
+- Feu el mateix que al punt 4 però en restriccions de taula. 
