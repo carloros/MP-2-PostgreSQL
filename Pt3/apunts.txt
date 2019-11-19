@@ -1,0 +1,32 @@
+CREATE TABLE productes (
+part varchar(20),
+tipus varchar(20),
+especificacio varchar(20),
+psuggerit float(6),
+clau serial,
+PRIMARY KEY(clau)
+);
+
+CREATE TABLE proveidors (
+empresa varchar(20) NOT NULL,
+credit bool,
+efectiu bool,
+PRIMARY KEY(empresa)
+);
+
+
+CREATE TABLE guanys(
+venda varchar(16),
+factor decimal (4,2),
+PRIMARY KEY (venda)
+);
+
+
+CREATE TABLE preus (
+empresa varchar(20) NOT NULL,
+clau int NOT NULL,
+preu float(6),
+PRIMARY KEY (empresa, clau),
+FOREIGN KEY (empresa) REFERENCES proveidors,
+FOREIGN KEY (clau) REFERENCES productes
+);

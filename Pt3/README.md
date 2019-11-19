@@ -30,17 +30,61 @@ psql -d DESCOMPON_PCS -a -f arxiu.psql
 
 - Crea un tipo de dades compost  que inclogue més d'un camp (`CREATE TYPE ... AS ...`) que pugue servir per una columna d'una nova taula que hauràs de crear a la BD (no es pot usar el tipo de l'exemple dels apunts). 
 
+> Per crear un camp compost ho farem de la següent manera, la taula tindrà la següent estructura:
+>
+> Empresa:
+>
+> - id
+>
+> - Nom
+> - Adreca
+> - Localitzacio
+> - Representant [ ]
+
+```plsql
+CREATE TYPE portaveu AS
+( 
+	nom VARCHAR(50),
+	cognom VARCHAR(50),
+	dni VARCHAR(10)
+);
+```
+
 
 
 ## 2. Crear taula amb camp compost
 
 - Crea una nova taula que inclogue algun camp del tipo de dades compost anterior.
 
+> Avans hem esmentat com seria la taula, ara només cal crear-la de forma que inclogui el camp compost:
+
+```plsql
+CREATE TABLE empreses
+(
+id SERIAL NOT NULL PRIMARY KEY,
+nom varchar(50),
+adreca varchar(100),
+localitzacio varchar(100),
+representant portaveu
+);
+```
+
 
 
 ## 3. Inserts a una taula amb camp compost
 
 - Mostra exemples d'inserció de dades a la taula (INSERT INTO...), actualització i consulta de les mateixes (SELECT...), accedint en tots els casos al camp del tipo de dades compost.
+
+> qawrtgasrgargerg
+
+```plsql
+INSERT INTO empreses (nom, adreca, localitzacio, representant) 
+VALUES 
+('PCComponentes', 'c/Algun lloc de almeria', 'Espanya',
+ROW
+('Carlos', 'Jimenez Fabregat', '47478945-E')
+);
+```
 
 
 

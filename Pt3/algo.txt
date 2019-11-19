@@ -1,0 +1,7 @@
+Proveidors -> Productes -> Preus -> Guanys
+
+Empresa:
+  - Nom
+  - Adreca
+  - Localitzacio
+  - Representant []
