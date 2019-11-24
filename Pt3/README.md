@@ -20,9 +20,15 @@ CREATE DATABASE DESCOMPON_PCS;
 
 > Seguidament imporarem l'arxiu sql per emplenar la BD amb totes les comandes desitjades:
 
-```plsql
-psql -d DESCOMPON_PCS -a -f arxiu.psql
+```bash
+psql -d descompon_pcs -a -f arxiu.psql
 ```
+
+![](img/2.png)
+
+![](img/3.png)
+
+![](img/4.png)
 
 
 
@@ -49,6 +55,8 @@ CREATE TYPE portaveu AS
 	dni VARCHAR(10)
 );
 ```
+
+![](img/5.png)
 
 
 
