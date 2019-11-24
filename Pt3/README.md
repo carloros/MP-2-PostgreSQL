@@ -104,6 +104,38 @@ ROW
 
 - Afegiu a alguna taula ja creada, o creeu-ne alguna de nova, que tingue diferents tipos de restriccions (`PRIMARY KEY, UNIQUE, FOREIGN KEY/REFERENCES, NULL, CHECK, ...`) als atributs. Demostreu la utilitat de les restriccions insertant dades a les taules.
 
+> Jo he triat demostarar el tipus `UNIQUE` que és molt útil per a tipus de camps que volem que actuen com una clau primaria a nivell de que no es poden repetir i han de ser unics per exemple un DNI
+
+```plsql
+CREATE TABLE treballadors
+(
+id SERIAL NOT NULL PRIMARY KEY,
+dni varchar(10),
+nom varchar(50),
+cognom varchar(100)
+);
+```
+
+```plsql
+ALTER TABLE treballadors ADD CONSTRAINT id_dni_treballador UNIQUE (id, dni);
+```
+
+![](img/8.png)
+
+
+
+> Ara només caldrà realitzar les pertinents comprovacions
+
+```plsql
+INSERT INTO treballadors (dni, nom, cognom) 
+VALUES 
+('47478945-E','Carlos', 'Jimenez Fabregat');
+```
+
+- Per alguna raó no m'ha impedit fer dos inserts iguals
+
+![9](img/9.png)
+
 
 
 ## 5. Restriccions a les taules
