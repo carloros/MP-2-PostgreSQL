@@ -77,6 +77,8 @@ representant portaveu
 );
 ```
 
+![](img/6.png)
+
 
 
 ## 3. Inserts a una taula amb camp compost
@@ -93,6 +95,8 @@ ROW
 ('Carlos', 'Jimenez Fabregat', '47478945-E')
 );
 ```
+
+![](img/7.png)
 
 
 
