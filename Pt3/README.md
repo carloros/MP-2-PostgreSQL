@@ -117,7 +117,7 @@ cognom varchar(100)
 ```
 
 ```plsql
-ALTER TABLE treballadors ADD CONSTRAINT id_dni_treballador UNIQUE (id, dni);
+ALTER TABLE treballadors ADD CONSTRAINT dni_treballador UNIQUE (dni);
 ```
 
 ![](img/8.png)
@@ -132,7 +132,7 @@ VALUES
 ('47478945-E','Carlos', 'Jimenez Fabregat');
 ```
 
-- Per alguna raó no m'ha impedit fer dos inserts iguals
+- Com podem veure al intentar inserir dos treballadors amb el mateix DNI  ens diu que no poden haver-hi duplicats
 
 ![9](img/9.png)
 
@@ -141,3 +141,18 @@ VALUES
 ## 5. Restriccions a les taules
 
 - Feu el mateix que al punt 4 però en restriccions de taula. 
+
+> Ara simplement caldrà crear la taula nova directament amb els camps dels que volm fer el unique
+
+```plsql
+CREATE TABLE treballadors
+(
+id SERIAL NOT NULL PRIMARY KEY,
+dni varchar(10),
+nom varchar(50),
+cognom varchar(100),
+CONSTRAINT pk_treballadors2 PRIMARY KEY(id),
+CONSTRAINT id_dni_treballadors2 UNIQUE(id, dni)
+);
+```
+
