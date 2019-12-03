@@ -145,7 +145,7 @@ VALUES
 > Ara simplement caldrà crear la taula nova directament amb els camps dels que volm fer el unique
 
 ```plsql
-CREATE TABLE treballadors
+CREATE TABLE treballadors2
 (
 id SERIAL NOT NULL PRIMARY KEY,
 dni varchar(10),
