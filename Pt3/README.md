@@ -147,12 +147,14 @@ VALUES
 ```plsql
 CREATE TABLE treballadors2
 (
-id SERIAL NOT NULL PRIMARY KEY,
-dni varchar(10),
+id SERIAL NOT NULL,
+dni varchar(10) NOT NULL,
 nom varchar(50),
 cognom varchar(100),
 CONSTRAINT pk_treballadors2 PRIMARY KEY(id),
 CONSTRAINT id_dni_treballadors2 UNIQUE(id, dni)
 );
 ```
+
+![9](img/10.png)
 
