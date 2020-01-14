@@ -2,7 +2,7 @@
 
 [TOC]
 
-## 1 - Estat actual
+## 0 - Estat actual
 
 - Treballarem en la base de dades DESCOMPON_PCS creada a l'anterior pràctica.
 
@@ -24,3 +24,6 @@
 
 ![](img/2.png)
 
+
+
+## 1 - 
